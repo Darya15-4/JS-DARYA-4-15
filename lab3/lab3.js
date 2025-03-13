@@ -36,19 +36,19 @@ registerForm.addEventListener('submit', (event) => {
     event.preventDefault();
     let isValid = true;
 
-    if (!emailInput.checkValidity()) {
+    if (!emailInput.checkValidity() || (emailInput.value === '')) {
         textEmailError.textContent = 'Введите корректный Email.';
         isValid = false;
     } else {
         textEmailError.textContent = '';
     }
-    if (nameInput.value.trim().length < 2) {
+    if (nameInput.value.trim().length < 2 || (nameInput.value === '')) {
         textNameError.textContent = 'Введите настоящее имя.';
         isValid = false;
     } else {
         textNameError.textContent = '';
     }
-    if (!passwordInput.checkValidity()) {
+    if (!passwordInput.checkValidity() || (passwordInput.value === '')) {
         textPasswordError.textContent = 'Пароль должен содержать минимум 6 символов.';
         isValid = false;
     } else {
@@ -103,4 +103,11 @@ buttonShowPassword.addEventListener('pointerup', () => {
 });
 buttonShowPassword.addEventListener('pointerleave', () => {
     passwordInput.type = 'password';
+});
+
+
+
+
+registerUser.addEventListener('reset', function() {
+    console.log('Форма была сброшена');
 });

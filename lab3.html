@@ -69,10 +69,10 @@
 
                             <label class='register__user-label' for="name">Имя (обязательно)</label>
                             <input class='register__user--input name_input' type="text" placeholder="Введите ваше имя" name="name" minlength="2" aria-describedby="nameError"required >
-                            <p class="nameError text_error" aria-live="polite">Введтие настоящее имя.</p>
+                            <p class="nameError text_error" aria-live="polite">Введите настоящее имя.</p>
                             
                             <label class='register__user-label' for="email" class="register__email--label">Email (обязательно)</label>
-                            <input class='register__user--input email_input' type="email" placeholder="Введите Email" name="email" aria-describedby="emailError"required>
+                            <input class='register__user--input email_input' type="email" placeholder="Введите Email" name="email" aria-describedby="emailError"required minlength="10">
                             <p class="emailError text_error" aria-live="polite">Введите корректный Email.</p>
 
                             <label class='register__user-label' for="password">Пароль (обязательно)</label>
@@ -83,6 +83,7 @@
                             <button type="submit" class="register__user--button">Зарегистрироваться</button>
                             <button class="register__user--button button__show_passwod">Показать пароль</button>
                             <button class="register__user--button button__close">Закрыть</button>
+                            <button type='reset' class="register__user--button button__throw">Сбросить</button>
                         </div>
                     </form>
                 </dialog>
@@ -90,7 +91,6 @@
         </section>
     </main>
     <footer>
-
     </footer>
     <script src="./lab3/lab3.js"></script>
 </body>

@@ -86,8 +86,8 @@ body {
 }
 .register__user{
     background-color: var(--color_grey);
-    border: none;
-    border-radius: 3rem;
+    border: 2px solid var(--color_green);
+    border-radius: 2rem;
     margin: 2rem auto;
 }
 fieldset {
@@ -134,7 +134,7 @@ fieldset {
 }
 .register__user--buttons {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     margin-bottom: 2rem;
 }
@@ -145,7 +145,7 @@ fieldset {
     border: 2px solid #4d0000;
     box-shadow: 0 0 2rem black;
     background: none;
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 1rem;
 }
 .text_error {
    display: none;

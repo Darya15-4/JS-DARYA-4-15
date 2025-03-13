@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lab3/lab3.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__wrapper">
+            <a class="header__link logo" href="#">
+                <img src="img/header__logo.svg" alt="logo" class="header__logo">
+            </a>
+            </a>
+            <span class="sr-only">Перейти на главную страницу</span>
+            <nav class="header__block--inf">
+                <ul class="header__item--one">
+                    <li>
+                        <a href="#">Шарпей</a>
+                    </li>
+                    <li>
+                        <a href="#">Сиба-ину</a>
+                    </li>
+                    <li>
+                        <a href="#">Корги</a>
+                    </li>
+                    <li>
+                        <a href="#">Померанский шпиц</a>
+                    </li>
+                </ul>
+                <ul class="header__item--two">
+                    <li>
+                        <a href="#">О нас</a>
+                    </li>
+                    <li>
+                        <a href="#">База знаний</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__block">
+                <div class="header__phone">
+                    <a href="tel:79262324307" class="phone">+7 (926) 232-43-07</a>
+                </div>
+                <button class="header__button">
+                    <svg width="22" height="12" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1H23H1Z" fill="#080069"/>
+                        <path d="M1 1H23" stroke="#F1F4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 13H23H1Z" fill="#080069"/>
+                        <path d="M1 13H23" stroke="#F1F4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 7H23H1Z" fill="#080069"/>
+                        <path d="M1 7H23" stroke="#F1F4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <button class="header__button--register">Зарегистрироваться</button>
+        </div>    
+    </header>
+    <main>
+        <section>
+            <div class="header__register">
+                <dialog class="register__user">
+                    <form class="register__user--form" novalidate>
+                        <fieldset>
+                            <legend class="register__user--legend">Создание аккаунта</legend>
+
+                            <label class='register__user-label' for="name">Имя (обязательно)</label>
+                            <input class='register__user--input name_input' type="text" placeholder="Введите ваше имя" name="name" minlength="2" aria-describedby="nameError"required >
+                            <p class="nameError text_error" aria-live="polite">Введтие настоящее имя.</p>
+                            
+                            <label class='register__user-label' for="email" class="register__email--label">Email (обязательно)</label>
+                            <input class='register__user--input email_input' type="email" placeholder="Введите Email" name="email" aria-describedby="emailError"required>
+                            <p class="emailError text_error" aria-live="polite">Введите корректный Email.</p>
+
+                            <label class='register__user-label' for="password">Пароль (обязательно)</label>
+                            <input class='register__user--input password_input' type="password" placeholder="Придумайте пароль" name="password" aria-describedby="passwordError" required minlength="6">
+                            <p class="passwordError text_error" aria-live="polite">Пароль должен содержать не менее 6 символов.</p>
+                        </fieldset>
+                        <div class="register__user--buttons">
+                            <button type="submit" class="register__user--button">Зарегистрироваться</button>
+                            <button class="register__user--button button__show_passwod">Показать пароль</button>
+                            <button class="register__user--button button__close">Закрыть</button>
+                        </div>
+                    </form>
+                </dialog>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./lab3/lab3.js"></script>
+</body>
+</html>

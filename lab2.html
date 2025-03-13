@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ясинская Дарья Денисовна - Лабораторная работа №2</title>
+    <link rel="stylesheet" href="lab2.css">
+
+</head>
+<body>
+    <header>
+        <div class="basket">
+            <img src="img/basket1.svg" alt="count" class="basket__icon">
+            <div class="basket__count">0</div>
+        </div>
+    </header>
+    <main>
+        <section class="task_one">
+            <div class="wrapper">
+                <h2 class="task_one__title">Задание 1: Like</h2>
+                <button class="task_one__button" aria-pressed="false" onclick="toggleLike(this)">
+                    <img src="img/simple-heart-outline-11.webp" alt="hearth" class="icon">
+                </button>
+            </div>
+        </section>
+        <section class="task_two">
+            <div class="wrapper">
+                <h2 class="task_two__title">Задание 2: Like / Dislike</h2>
+                <div class="buttons__block">
+                    <button class="task_two_button_like" aria-pressed="false">
+                        <img src="img/simple-heart-outline-112.png" alt="heart" class="icon heart-icon">
+                    </button>
+                    <button class="task_two_button_dislike" aria-pressed="false">
+                        <img src="img//simple-heart-outline-1122.png" alt="broken heart" class="icon broken-heart-icon">
+                    </button>
+                </div>
+            </div>            
+        </section>
+        <section>
+            <h2>Задание 3: Корзина</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="img/iX5pNmZtYKA.jpg" alt="product" class="image__product">
+                    <h3>Тапки</h3>
+                    <p>1 000 000 руб.</p>
+                    <button class="basket__button">В корзину</button>
+                </div>
+                <div class="product">
+                    <img src="img/9I1sK39vj0I.jpg" alt="product" class="image__product">
+                    <h3>Помада</h3>
+                    <p>2 000 000 руб.</p>
+                    <button class="basket__button">В корзину</button>
+                </div>
+                <div class="product">
+                    <img src="img/VLSKq5X7l6o.jpg" alt="product" class="image__product">
+                    <h3>Черешня</h3>
+                    <p>1 000 000 000 руб.</p>
+                    <button class="basket__button">В корзину</button>
+                </div>
+            </div>
+        </section>
+        <section class="sort">
+            <div class="">
+                <ul class="number-list"></ul>
+                <div class="buto">
+                    <button class="sort-asc">По возрастанию</button>
+                    <button class="sort-desc">По убыванию</button>
+                    <button class="sort-reset">Сбросить</button>
+                </div>
+                <p class="coords"></p>
+            </div>
+        </section>
+        <section>
+            <button type="button" onclick="window.myDialog.show()">
+                Просто открыть
+              </button>
+              <button type="button" onclick="window.myDialog.showModal()">
+                Открыть как модалку
+              </button>
+              <dialog id="myDialog">🖖 Живи долго и процветай!</dialog>
+              
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="lab2.js"></script>
+</body>
+</html>

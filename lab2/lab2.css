@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Font';
+    src: url("fonts/ofont.ru_VinqueRg.ttf") format("truetype");
+}
+h1, h2, h3, p, span, div, button {
+    font-family: 'Font';
+    text-align: center;
+}
+header {
+    background-color: #979997;
+}
+body {
+    background-color: #979997;
+}
+ul {
+    list-style: none;
+}
+.basket {
+    position: fixed;
+    width: 95%;
+    top:0;
+    display: flex;
+    margin: 1rem 2rem;
+    gap:2rem;
+    justify-content: flex-end;
+}
+.basket__icon {
+    width: 3rem;
+}
+.basket__count {
+    font-size: 1.6rem;
+}
+.wrapper {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap:2rem;
+    margin-bottom: 10rem;
+    max-width: 50rem;
+}
+button {
+    border: none;
+    background: none;
+    border-radius: 2rem;
+}
+.icon, .heart_icon, .broken_heart_icon{
+    height: 6rem; width: 6rem;
+    transition: 0.5s ease;
+}
+.icon:active {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 20px #4d0000);
+}
+.buttons__block {
+    display: flex; gap:2rem;
+    justify-content: center;
+}
+.products {
+    display: flex; gap:2rem;
+    justify-content: center;
+}
+.image__product {
+    max-height: 15rem;
+    border-radius: 2rem;
+}
+.basket__button {
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #4d0000;
+}
+.basket__button:hover {
+    box-shadow: 0 0 25px #4d0000;
+}
+.basket__button:active {
+    background-color: #4d0000;
+    color:white;
+}
+.number-list {
+    display: flex;
+    gap:1rem;
+    border: 2px solid  #4d0000;
+    border-radius: 1.5rem;
+    max-width: 22rem;
+    margin: 10rem auto 2rem;
+}
+.sort-asc {
+    background-color: #4d0000;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+.sort-desc {
+    background-color: #4d0000;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+.sort-reset {
+    background-color: #4d0000;
+    color: white;
+    padding: 1rem 1.5rem;
+}

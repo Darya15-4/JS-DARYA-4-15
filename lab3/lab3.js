@@ -90,3 +90,17 @@ function validateField(input) {
         textError.style.display = 'none';
     }
 }
+
+
+
+
+let buttonShowPassword = document.querySelector('.button__show_passwod');
+buttonShowPassword.addEventListener('pointerdown', () => {
+    passwordInput.type = 'text';
+});
+buttonShowPassword.addEventListener('pointerup', () => {
+    passwordInput.type = 'password';
+});
+buttonShowPassword.addEventListener('pointerleave', () => {
+    passwordInput.type = 'password';
+});

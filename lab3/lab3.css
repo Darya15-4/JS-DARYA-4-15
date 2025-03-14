@@ -82,7 +82,11 @@ body {
     border:2px solid var(--color_green);
     box-shadow: 0 0 2rem var(--color_green);
     background: none;
-
+    transition: transform 0.3s
+}
+.header__button--register:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 4rem var(--color_green);
 }
 .register__user{
     background-color: var(--color_grey);

@@ -74,6 +74,7 @@ registerForm.addEventListener('submit', (event) => {
 
 
 
+
 let inputs = document.querySelectorAll('.register__user--input');
 inputs.forEach(input => {
     input.addEventListener('blur', () => validateField(input));
@@ -94,6 +95,16 @@ function validateField(input) {
 
 
 
+registerUser.addEventListener('reset', function() {
+    let errors = document.querySelectorAll('.text_error');
+    errors.forEach(error => {
+        error.style.display = 'none';
+    });
+});
+
+
+
+
 let buttonShowPassword = document.querySelector('.button__show_passwod');
 buttonShowPassword.addEventListener('pointerdown', () => {
     passwordInput.type = 'text';
@@ -107,7 +118,3 @@ buttonShowPassword.addEventListener('pointerleave', () => {
 
 
 
-
-registerUser.addEventListener('reset', function() {
-    console.log('Форма была сброшена');
-});

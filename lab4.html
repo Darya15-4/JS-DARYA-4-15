@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mur</title>
+    <link rel="stylesheet" href="./lab4/lab4.css">
+    <link rel="icon" href="./img/favicon.png">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="resolve">
+            <h2>Resolve</h2>
+            <div class="wrapper">
+                <button class="resolve__button">Mur</button>
+                <p class="resolve__text"></p>
+                <img src="./img/1335183481_preview_Giphy_(2)bjj.gif" alt="cat" class="resolve__gif">
+            </div>
+        </section>
+        <section class="data">
+            <h2>Случайные данные и ошибки</h2>
+            <div>
+                <form>
+                    <label>Вероятность (от 0 до 1):</label>
+                    <input class="probalityOfError" type="number" min='0' max='1' placeholder="Введите вероятность" required>
+                    <label>Введите данные:</label>
+                    <input class="dataString" type="text" placeholder="Ваши данные" required>
+                    <button class="data__button">Вывести результат</button>
+                    <p class="data__result"></p>
+                </form>
+            </div>
+        </section>
+        <section class="kraft">
+            <h2>Крафт</h2>
+            <div class="kraft__container wrapper">
+                <ul class="kraft__list--items">
+                    <li class="kraft__item--resources">
+                        <ul class="kraft__list--resources">
+                            <li>
+                                <button class="kraft__button--resources button__tree">
+                                    <img src="./img/tree.png" alt="tree"><span class="kraft__count--woods">0</span></img>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="kraft__button--resources button__ore">
+                                    <img src="./img/ore.png" alt="ore"><span class="kraft__count--ironOre">0</span></img>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="kraft__item--craftables">
+                        <ul class="kraft__list--craftables">
+                            <li>
+                                <button class="kraft__button--craftables button__stick">
+                                    <img src="./img/stick.png" alt="stick"><span class="kraft__count--sticks">0</span></img>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="kraft__button--craftables button__ingot">
+                                    <img src="./img/ingot.png" alt="ingot"><span class="kraft__count--ironIngot">0</span></img>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="kraft__button--craftables button__kirka" >
+                                    <img src="./img/kirka.png" alt="kirka"><span class="kraft__count--pickaxe">0</span></img>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="kraft__text--result"></p>
+            </div>
+        </section>        
+    </main>
+    <footer></footer>
+    <script src="lab4/lab4.js"></script>
+</body>
+</html>

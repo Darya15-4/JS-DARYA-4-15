@@ -1,0 +1,60 @@
+function disableButtons() {
+    treeCreateButton.disabled = true;
+    oreCreateButton.disabled = true;
+    stickCreateButton.disabled = true;
+    ingotCreateButton.disabled = true;
+    kirkaCreateButton.disabled = true;
+}
+function enableButtons() {
+    treeCreateButton.disabled = false;
+    oreCreateButton.disabled = false;
+    stickCreateButton.disabled = false;
+    ingotCreateButton.disabled = false;
+    kirkaCreateButton.disabled = false;
+}
+function createElement(itemKey) {
+    const item = items[itemKey];
+    return new Promise((resolve, reject) => {
+        for (const reqItem of item.requiredItems) {
+            if (inventory[reqItem] <= 0) {
+                return reject(`Не хватает ${items[reqItem].name}`);
+            }
+        }
+        const progressEl = document.querySelector(`.kraft__count--${itemKey}`);
+        progressEl.textContent = "Создание...";
+        setTimeout(() => {
+            if (Math.random() < item.failProbability) {
+                reject(`${item.name} не удалось создать!`);
+            } else {
+                item.requiredItems.forEach(reqItem => inventory[reqItem]--);
+                inventory[itemKey]++;
+                updateUI();
+                resolve(`${item.name} успешно создан!`);
+            }
+        }, item.craftingTime);
+    });
+}
+function createCraftingHandler(itemKey) {
+    return async () => {
+        try {
+            disableButtons();
+            const result = await createElement(itemKey);
+            document.querySelector('.kraft__text--result').textContent = result;
+        } catch (error) {
+            document.querySelector('.kraft__text--result').textContent = error;
+        } finally {
+            enableButtons();
+        }
+    };
+}
+treeCreateButton.addEventListener('click', () => {
+    inventory.woods++;
+    updateUI();
+});
+oreCreateButton.addEventListener('click', () => {
+    inventory.ironOre++;
+    updateUI();
+});
+stickCreateButton.addEventListener('click', createCraftingHandler('sticks'));
+ingotCreateButton.addEventListener('click', createCraftingHandler('ironIngot'));
+kirkaCreateButton.addEventListener('click', createCraftingHandler('pickaxe'));

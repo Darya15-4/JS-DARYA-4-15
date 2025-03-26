@@ -1,0 +1,123 @@
+:root {
+    --main-color: #ffc2cc;
+    --element-color: #fff5f7;
+    --border-color: #ff5c7c;
+    --hover-button: #fff0f5;
+    --data-color: #ffebee;
+    font-size: 62.5%;
+}
+@font-face {
+    font-family: 'Nexa';
+    src: url("../fonts/ofont.ru_Nexa\ Script.ttf") format("truetype");
+}
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+body {
+    background-color: var(--main-color);
+}
+ul, li {
+    list-style: none;
+}
+section {
+    margin-bottom: 4rem;
+    border-top: 0.5rem solid white;
+}
+img {
+    width: 10rem;
+    max-height: 20rem;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p, button, h1, h2, a, ul, li, label, span, input::placeholder {
+    font-family: 'Nexa';
+    text-align: center;
+}
+input::placeholder {text-align: left; font-size: 1.8rem;}
+h1, h2, span {
+    font-size: 3.6rem;
+}
+p {
+    font-size: 2rem;
+}
+label {
+    font-size: 2rem;
+}
+.resolve__button {
+    font-size: 2.8rem;
+    background-color: var(--element-color);
+    padding: 1.5rem 2.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+.resolve__button:hover {
+    background-color: var(--hover-button);
+    transform: scale(1.05);
+}
+.resolve__button:active {
+    transform: scale(1.1);
+    box-shadow: 0 0 3rem var(--border-color);
+}
+.resolve__gif {
+    display: none;
+    width: 10rem;
+}
+.data {
+    padding: 1rem 4rem 4rem 4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: var(--data-color);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+input {
+    padding: 1.5rem 2rem;
+    min-width: 30rem;
+    border: 2px solid var(--border-color);
+    border-radius: 1.5rem;
+}
+.data__button {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--border-color);
+    background: linear-gradient(to top, var(--border-color), var(--main-color));
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+.data__button:active {
+    transform: scale(1.05);
+}
+
+
+/*Крафт*/
+.kraft__container {
+    background-image: url(../img/phone_kraft.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60rem;
+}
+.kraft__list--items {
+    display: flex;
+    gap: 20rem;
+}
+.kraft__list--resources, .kraft__list--craftables {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.kraft__button--craftables, .kraft__button--resources {
+    background: none;
+    border: none;
+}

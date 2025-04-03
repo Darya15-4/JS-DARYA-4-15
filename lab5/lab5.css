@@ -1,0 +1,92 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.toasts__block {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toast--show {
+  display: block;
+  opacity: 1;
+}
+
+.toast--success {
+  background-color: #4CAF50;
+}
+
+.toast--error {
+  background-color: #f44336;
+}
+
+.toast__button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Галерея */
+.gallery__button {
+  margin-bottom: 20px;
+}
+
+.gallery__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item__image {
+  width: 100rem;
+  max-height: 150rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery-item__caption {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Темная и светлая тема */
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+input, button {
+  margin: 5px 0;
+}
+.gallery__message {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}

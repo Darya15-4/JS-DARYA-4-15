@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная 5</title>
+  <link rel="stylesheet" href="./lab5/lab5.css">
+</head>
+<body class="light-theme">
+  <header>
+    <button class="theme-toggle">Сменить тему</button>
+  </header>
+  <main>
+    <section class="toasts">
+      <div class="toasts__block wrapper">
+        <p class="toasts__message"></p>
+        <button class="toast__button">Закрыть</button>
+      </div>
+    </section>
+    
+    <section class="gallery">
+      <button class="gallery__button">Обновить галерею</button>
+      <p class="gallery__message" aria-live="polite"></p>
+      <div class="gallery__container"></div>
+    </section>
+    
+    <section class="temperature">
+      <form class="temperature__form">
+        <label for="room">Номер аудитории</label>
+        <input type="text" id="room" placeholder="Введите номер аудитории" required class="number__input">
+        <label for="temp">Температура</label>
+        <input type="number" id="temp" placeholder="Введите температуру воздуха" required class="temp__input" min="-50" max="50">
+        <button type="submit" class="temperature__button">Отправить</button>
+      </form>
+      <p class="temperature__result"></p>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src="./lab5/lab5.js"></script>
+</body>
+</html>

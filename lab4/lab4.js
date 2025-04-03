@@ -54,9 +54,7 @@ dataButton.addEventListener('click', (event) => {
         });
 });
 
-
-
-
+ 
 const inventory = { 
     woods: 0,
     sticks: 0,
@@ -87,35 +85,42 @@ function updateUI() {
     document.querySelector('.kraft__count--ironIngot').textContent = inventory.ironIngot;
     document.querySelector('.kraft__count--pickaxe').textContent = inventory.pickaxe;
 }
+
 function showMessage(message, isError = false) {
     resultText.textContent = message;
     resultText.style.color = isError ? "red" : "black";
 }
 async function createElement(itemKey) {
     const item = items[itemKey];
-    return new Promise((resolve, reject) => {
-        for (const req of item.requiredItems) {
-            if (inventory[req] === 0) {
-                return reject(`Не хватает ${items[req].name}`);
+    for (const req of item.requiredItems) {
+        if (inventory[req] <= 0) {
+            showMessage(`Недостаточно ${items[req].name}. Создаём...`, false);
+            const success = await createElement(req);
+            if (!success) {
+                showMessage(`Не удалось создать ${items[req].name}`, true);
+                return false;
             }
         }
-        showMessage(`Создаётся ${item.name}...`, false);
+    }
+    showMessage(`Создаётся ${item.name}...`, false);
+    return new Promise(resolve => {
         setTimeout(() => {
             if (Math.random() < item.failProbability) {
                 showMessage(`Не удалось создать ${item.name}!`, true);
-                reject();
-                return
+                resolve(false);
+            } else {
+                for (const req of item.requiredItems) {
+                    inventory[req]--;
+                }
+                inventory[itemKey]++;
+                updateUI();
+                showMessage(`${item.name} создан!`, false);
+                resolve(true);
             }
-            for (const req of item.requiredItems) {
-                inventory[req]--;
-            }
-            inventory[itemKey]++;
-            updateUI();
-            showMessage(`${item.name} успешно создан!`, false);
-            resolve();
         }, item.craftingTime);
     });
 }
+
 treeCreateButton.addEventListener('click', () => {
     inventory.woods++;
     updateUI();
@@ -129,20 +134,16 @@ oreCreateButton.addEventListener('click', () => {
 });
 
 stickCreateButton.addEventListener('click', async () => {
-    try {
-        await createElement('sticks');
-    } catch {}
+    await createElement('sticks');
 });
 
 ingotCreateButton.addEventListener('click', async () => {
-    try {
-        await createElement('ironIngot');
-    } catch {};
+    await createElement('ironIngot');
 });
 
 kirkaCreateButton.addEventListener('click', async () => {
-    try {
-        await createElement('pickaxe');
-    } catch {}
+    await createElement('pickaxe');
 });
+
 updateUI();
+

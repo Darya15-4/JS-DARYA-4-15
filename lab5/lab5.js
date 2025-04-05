@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Установка темы из localStorage
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.classList.add(`${savedTheme}-theme`);
   document.body.classList.add(`${savedTheme}-theme`);
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Функция для показа тоста
   const toast = document.querySelector('.toasts__block');
   const toastMessage = document.querySelector('.toasts__message');
   const toastButton = document.querySelector('.toast__button');
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Галерея
   const galleryContainer = document.querySelector('.gallery__container');
   const galleryButton = document.querySelector('.gallery__button');
   const galleryMessage = document.querySelector('.gallery__message');
@@ -80,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
       image.classList.add('gallery-item__image');
       image.src = item.url;
       image.alt = item.alt || 'Изображение';
-      image.style.objectFit = 'contain';
-      image.style.width = '100%';
-      image.style.height = 'auto';
 
       const caption = document.createElement('p');
       caption.classList.add('gallery-item__caption');
@@ -99,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   getImages();
 
-  // Температура
   const temperatureForm = document.querySelector('.temperature__form');
   const roomInput = document.querySelector('.number__input');
   const tempInput = document.querySelector('.temp__input');

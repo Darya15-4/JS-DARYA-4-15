@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаба 6</title>
+  <link rel="stylesheet" href="lab6/lab6.css">
+</head>
+<body>
+  <header>
+  </header>
+  <!-- Версионирование -->
+  <section id="version-manager">
+    <h2>Версионирование</h2>
+    <input type="text" id="version-input" placeholder="Введите версию (MAJOR.MINOR.PATCH)">
+    <button id="create-version-btn">Создать версию</button>
+    <div id="version-display"></div>
+    <div class="btn-group">
+      <button id="major-btn">Major</button>
+      <button id="minor-btn">Minor</button>
+      <button id="patch-btn">Patch</button>
+      <button id="rollback-btn">Rollback</button>
+    </div>
+  </section>
+  <section id="rectangle-square">
+    <h2>Прямоугольник и квадрат</h2>
+    <input type="number" id="width" placeholder="Ширина" min="1">
+    <input type="number" id="height" placeholder="Высота" min="1">
+    <button id="calculate-rect-btn">Рассчитать</button>
+    <div id="rectangle-info"></div>
+  </section>
+  <section id="temperature">
+    <h2>Температура</h2>
+    <div class="temp-inputs">
+      <input type="number" id="temp1" placeholder="Температура 1 (°C)">
+      <span id="temp1-display"></span>
+    </div>
+    <div class="temp-inputs">
+      <input type="number" id="temp2" placeholder="Температура 2 (°C)">
+      <span id="temp2-display"></span>
+    </div>
+    <div class="unit-selector">
+      <label><input type="radio" name="unit" value="C" checked> Цельсий</label>
+      <label><input type="radio" name="unit" value="K"> Кельвин</label>
+      <label><input type="radio" name="unit" value="F"> Фаренгейт</label>
+    </div>
+    <div class="btn-group">
+      <button id="add-temp-btn">Сложить</button>
+      <button id="subtract-temp-btn">Вычесть</button>
+    </div>
+    <div id="temp-result"></div>
+  </section>
+  <section id="rps">
+    <h2>Камень-Ножницы-Бумага</h2>
+    <div class="btn-group">
+      <button id="start-game-btn">Следить за играми</button>
+      <button id="stop-game-btn">Остановить</button>
+    </div>
+    <div id="game-history"></div>
+    <div id="game-stats"></div>
+  </section>
+  <div id="error-display" style="display:none;"></div>
+
+  <script src="lab6/lab6.js"></script>
+</body>
+</html>

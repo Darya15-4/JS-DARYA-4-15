@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -8,8 +7,12 @@ button {
   padding: 10px;
   border: none;
   cursor: pointer;
+  border-radius: 1rem;
 }
-
+section {
+  margin-bottom: 5rem;
+}
+/* Стили для уведомлений (тостов) */
 .toasts__block {
   position: fixed;
   bottom: 20px;
@@ -44,11 +47,11 @@ button {
   margin-top: 10px;
 }
 
-/* Галерея */
 .gallery__button {
   margin-bottom: 20px;
 }
 
+/* ГАЛЕРЕЯ */
 .gallery__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -56,19 +59,34 @@ button {
 }
 
 .gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  height: 220px; /* Фиксированная высота блока */
   text-align: center;
 }
 
 .gallery-item__image {
-  width: 100rem;
-  max-height: 150rem;
-  object-fit: cover;
+  width: 100%;
+  height: 150px; /* Фиксированная высота */
+  object-fit: cover; /* Заполняет блок без искажения */
   border-radius: 10px;
 }
 
 .gallery-item__caption {
-  margin-top: 10px;
   font-size: 14px;
+  margin-top: 5px;
+  flex-grow: 1; /* Заполняет доступное пространство */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5px;
+  color: black;
 }
 
 /* Темная и светлая тема */
@@ -85,8 +103,31 @@ body.dark-theme {
 input, button {
   margin: 5px 0;
 }
+
 .gallery__message {
   font-size: 18px;
   text-align: center;
   margin-top: 20px;
+}
+.temperature__form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 20rem;
+  gap: 1rem;
+}
+.temperature__button {
+  padding: 1rem;
+  max-width: 12rem;
+  margin: 2rem auto 0;
+  border-radius: 1.5rem;
+  border: 2px solid white;
+  background:   #333;
+  color: white
+
+}
+input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid  #333;
 }
